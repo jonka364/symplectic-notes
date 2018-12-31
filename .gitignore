@@ -1,8 +1,7 @@
 
 *.aux
-*.pdf
+notes.pdf
 *.gz
 *.log
 *.txt
 *.txt
-.gitignore.txt
