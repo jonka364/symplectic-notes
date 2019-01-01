@@ -31,6 +31,10 @@
 \usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 % These packages are all incorporated in the memoir class to one degree or another...
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
 %%% HEADERS & FOOTERS
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
@@ -62,13 +66,35 @@
 \maketitle
 These are my notes on symplectic geometry and classical mechanics, based on a course by Tobias Osborne given in the winter semester 2017-2018 at the Leibniz Universität Hannover. I watched the lectures on YouTube, and I strongly recommend them. Not only might these notes contain misunderstandings introduced by me (and for which I take responsibility); they are also not particularly complete, since I made no attempt to write down everything that was said in the lectures. Rather I made notes for my own use, selectively writing down what I felt I needed to read later. Caveat lector.
 
+
+\section*{Lecture 16: The moment map} 
+
 \section*{Lecture 17: The Darboux-Weinstein theorem}
 This states that symplectic manifolds have no local invariants beyond the dimension. 
 
 \section*{Lecture 18: The Marsden-Weinstein-Meyer theorem}
 
-\section*{Lecture 19}
+\section*{Lecture 19: Properties of the moment map}
+\subsection*{The Atiyah-Guillemin-Sternberg convexity theorem}
+Let $(M, \omega)$ be a compact, connected symplectic manifold with a Hamiltonian action by a torus $G = T^m$ and let $\mu: M \rightarrow \mathfrak{g}^\ast$ be the moment map. Then:
+\begin{enumerate}
+\item The level sets of $\mu$ are connected;
+\item The image of $\mu$ is the convex hull of the images of the fixed points of the action.
+\end{enumerate}
+In view of this, the image of $\mu$ is called the \emph{moment polytope} of the action. Note that $\mathfrak{g}^\ast \cong \mathbb{R}^n$ is a real vector space so the notion of convex hull makes sense. 
 
-\section*{Lecture 20}
+\subsection*{Liouville measure}
+On a symplectic manifold $(M, \omega)$, the top exterior power $\omega^n = \wedge^n \omega$ is nondegenerate, hence a volume form. The normalized quantity $\omega^n/n!$ is called the Liouville measure. If $X$ is a Hamiltonian vector field on $M$, so that $\mathscr{L}_X \omega = 0$. Then (by Leibniz) $\mathscr{L}_X \omega^n = 0$ also, so Hamiltonian flows preserve the Liouville measure. In particular this is true for the time evolution of a dynamical system, which is Liouville's theorem. 
+\subsection*{Duistermaat-Heckman measure}
+Suppose that $M$ is compact so that in particular 
+$$
+\int_M \frac{\omega^n}{n!} 
+$$
+is finite. Then for any moment map $\mu:M \rightarrow \mathbb{R}$ we can push Liouville forward to a measure on $\mathbb{R}$, called the Duistermaat-Heckman measure. 
+
+Now suppose that we have a circle action on $M$, i.e. that the flow $\sigma_t = \operatorname{exp}(tX)$ is periodic. 
+
+
+\section*{Lecture 20: Complex manifolds}
 
 \end{document}
