@@ -66,6 +66,25 @@
 \maketitle
 These are my notes on symplectic geometry and classical mechanics, based on a course by Tobias Osborne given in the winter semester 2017-2018 at the Leibniz Universität Hannover. I watched the lectures on YouTube, and I strongly recommend them. Not only might these notes contain misunderstandings introduced by me (and for which I take responsibility); they are also not particularly complete, since I made no attempt to write down everything that was said in the lectures. Rather I made notes for my own use, selectively writing down what I felt I needed to read later. Caveat lector.
 
+\section*{Notation}
+
+
+\section*{Lecture 13: Symplectic fields and flows}
+Let $X$ be a vector field on $(M,\omega)$. Then $X$ is called symplectic if $\mathscr{L}_X \omega = 0$. Recall that a vector field is called Hamiltonian if it arose from a function $H$ on $M$ via
+$$
+\omega (X_H, \cdot) = dH.
+$$
+By a calculation, any Hamiltonian field is symplectic. More specifically, let $i_X\omega = \alpha_X$. Then
+$$
+d\alpha_X = \mathscr{L}_X \omega.
+$$
+Hence a vector field $X$ is symplectic if and only if its corresponding $1$-form $\alpha_X$ is closed, and it is Hamiltonian if and only if $\alpha_X$ is exact. Thus the relation between symplectic and Hamiltonian vector fields is precisely the relation between closed and exact $1$-forms. We know from de Rham theory that this hinges on the topology of $M$, specifically $H^1(M)$. As for flows, $\operatorname{exp}(tX)$ preserves $\omega$ if and only if $X$ is symplectic. \\
+Turning now to the special case of cotangent bundles, suppose $M$ is an arbitrary manifold and $X$ a vector field on $M$. Then there is a unique lift of $X$ to a vector field $X_\#$ on $T^\bullet M$, and this field is always Hamiltonian with 
+$$
+H = i_{X_\#}\alpha,
+$$
+where $\alpha$ is the tautological $1$-form on $T^\bullet M$.
+
 
 \section*{Lecture 16: The moment map} 
 
@@ -98,3 +117,5 @@ Now suppose that we have a circle action on $M$, i.e. that the flow $\sigma_t = 
 \section*{Lecture 20: Complex manifolds}
 
 \end{document}
+
+\section*{}
