@@ -68,6 +68,44 @@ These are my notes on symplectic geometry and classical mechanics, based on a co
 
 \section*{Notation}
 
+\section*{}
+
+\section*{}
+
+\section*{}
+
+\section*{Lecture 6}
+
+\section*{}
+
+\section*{}
+
+
+\section*{Lecture 9: Cotangent bundles are symplectic}
+Let $M$ be a smooth manifold. Then its cotangent bundle $T^\bullet M$ is again a smooth manifold. If the functions $x_i$ are coordinates on (some subset of) $M$, then a section of $T^\bullet M$ can be written uniquely as
+$$
+\xi = \sum_i \xi_i(x_1, \dots, x_n) dx_i,
+$$
+where the $\xi_i$ are smooth functions of the $x_i$. Here we are thinking of the cotangent bundle as a sheaf of $1$-forms. To get the total space of the bundle, we promote the $\xi_i$ to coordinates. It then remains to work out how they behave under changes of coordinates. By definition, two $1$-forms are equal if they are equal as maps from tangent vectors to numbers. 
+
+
+Next, we claim that there is an intrinsically defined $1$-form
+$$
+\alpha = \sum_i \xi_i dx_i,
+$$
+called the tautological $1$-form. As an example, let's take $M=\mathbb{R}^2$ away from the origin and let's work out $\alpha$ in both Cartesian and polar coordinates. In Cartesian coordinates we have
+$$
+\alpha = \xi_x dx + \xi_y dy
+$$
+
+
+
+\section*{Lecture 10: Vector fields and flows}
+
+\section*{Lecture 11: Properties of the Lie derivative}
+
+\section*{Lecture 12: The interior product}
+
 
 \section*{Lecture 13: Symplectic fields and flows}
 Let $X$ be a vector field on $(M,\omega)$. Then $X$ is called symplectic if $\mathscr{L}_X \omega = 0$. Recall that a vector field is called Hamiltonian if it arose from a function $H$ on $M$ via
@@ -86,12 +124,25 @@ $$
 where $\alpha$ is the tautological $1$-form on $T^\bullet M$.
 
 
+\section*{Lecture 14: Lagrangian submanifolds}
+
+
+\section*{Lecture 15: The adjoint and coadjoint representations}
+
 \section*{Lecture 16: The moment map} 
 
 \section*{Lecture 17: The Darboux-Weinstein theorem}
 This states that symplectic manifolds have no local invariants beyond the dimension. 
 
 \section*{Lecture 18: The Marsden-Weinstein-Meyer theorem}
+If a sympectic manifold is equipped with a continuous group action, we can sometimes take a quotient by the group action and obtain a smaller symplectic manifold. Suppose the symplectic manifold $(M,\omega)$ is acted on symplectically by a Lie group $G$, that is, there is a smooth group homomorphism $\psi: G \rightarrow \operatorname{Sympl}(M)$. Suppose also that there is a compatible moment map $\mu: M \rightarrow \mathfrak{g}^\ast$ to the dual of the Lie algebra of $G$, compatibility meaning that
+$$
+\mu \circ \psi (g) = \operatorname{Ad}^\ast_g \circ \mu
+$$
+for every group element $g$.
+(TODO: find that comment about the cohomology assumptions on G)
+Then $G$ stabilizes the level set $\mu^{-1}(0) \subset M$
+
 
 \section*{Lecture 19: Properties of the moment map}
 \subsection*{The Atiyah-Guillemin-Sternberg convexity theorem}
@@ -114,8 +165,9 @@ is finite. Then for any moment map $\mu:M \rightarrow \mathbb{R}$ we can push Li
 Now suppose that we have a circle action on $M$, i.e. that the flow $\sigma_t = \operatorname{exp}(tX)$ is periodic. 
 
 
-\section*{Lecture 20: Complex manifolds}
+\section*{Lecture 20: Almost complex and complex manifolds}
 
+\section*{Lecture 21: Kähler manifolds and the geometry of quantum mechanics}
 \end{document}
 
 \section*{}
