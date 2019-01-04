@@ -78,7 +78,27 @@ These are my notes on symplectic geometry and classical mechanics, based on a co
 
 \section*{}
 
-\section*{}
+\section*{Symplectic forms and manifolds}
+Let $V$ be a real vector space and let $\Omega: V\times V \rightarrow \mathbb{R}$ be a bilinear skew-symmetric form. A Gram-Schmidt argument shows that $V$ admits a basis $\{u_1, \dots, u_k, e_1, \dots, e_n, f_1, \dots, f_n\}$, for which
+\begin{align*}
+ \Omega(u_i, \cdot)  &= 0  \\
+ \Omega(e_i, e_j) &= \Omega(f_i, f_j) = 0 \\
+\Omega(e_i, f_j) &= \delta_{ij}
+\end{align*}
+for all $i$ and $j$; in other words, the $\{u_i\}$ span the degenerate part and the $\{e_i\}$ and $\{f_i\}$ are a standard basis for the non-degenerate part. They should remind you of position and momentum in quantum mechanics. We have that $k + 2n = \operatorname{dim}V$. If $k=0$, $\Omega$ is non-degenerate and is called symplectic. Note that this can only happen if $ \operatorname{dim}V$ is even. Recall what non-degeneracy means for forms on a vector space: given any form (linear map) $\beta: V\times V \rightarrow \mathbb{R}$ we can curry and get a map
+$$
+\tilde{\beta}_1: V \rightarrow V^\ast,
+$$
+the exponential transpose, given by
+$$
+\tilde{\beta}_1(u)(v) = \beta(u,v)
+$$
+(and similarly $\tilde{\beta}_2$ by currying in the second slot first). Thus there are exact sequences
+$$
+0 \rightarrow \operatorname{ker}\tilde{\beta}_i \rightarrow V \rightarrow V^\ast \rightarrow \operatorname{coker}\tilde{\beta}_i \rightarrow 0.
+$$
+If $V$ is finite-dimensional, then if either of the $\tilde{\beta}_i$ is injective, then so is the other, and $\beta$ is called nondegenerate. Then each $\tilde{\beta}_i$ is an injective map from a finite-dimensional vector space to another vector space of the same dimension, hence an isomorphism (of $V$ with its dual $V^\ast$). None of this uses any symmetry assumption on $\beta$. Returning to the case of $\Omega$, we notice that the skew-symmetry means that $\tilde{\beta}_1 = - \tilde{\beta}_2$, so that it does little difference in which slot we curry. What is important is that a non-degenerate form gives a way to identify a vector space with its dual; this will be used extensively in what follows. Turning to differential forms, a $2$-form $\omega$ on a manifold $M$ is called symplectic if it is closed ($d\omega = 0$) and each $\omega_p$ is a symplectic form on the tangent space $T_pM$, for every point $p\in M$. The data $(M, \omega)$ of a manifold and a symplectic $2$-form is called a symplectic manifold. A choice of $\omega$ on a given $M$ is called a symplectic structure. Since non-degenerate symplectic forms only exist on even-dimensional vector spaces, only even-dimensional manifolds admit a symplectic structure. This condition is necessary but not sufficient. For example, the standard area $2$-form on the $2$-sphere $S^2$ is symplectic; it is non-degenerate, and is automatically closed since $S^2$ is two-dimensional. In fact, no other sphere admits a symplectic structure.\\
+Finally, we may ask whether the standard vector space basis exhibited initially in this section extends to open sets on manifolds. It does, and this will be dealt with in lecture 17. For now we merely state that the corresponding coordinates exist and are called Darboux coordinates.
 
 
 \section*{Lecture 9: Cotangent bundles are symplectic}
@@ -86,7 +106,9 @@ Let $M$ be a smooth manifold. Then its cotangent bundle $T^\bullet M$ is again a
 $$
 \xi = \sum_i \xi_i(x_1, \dots, x_n) dx_i,
 $$
-where the $\xi_i$ are smooth functions of the $x_i$. Here we are thinking of the cotangent bundle as a sheaf of $1$-forms. To get the total space of the bundle, we promote the $\xi_i$ to coordinates. It then remains to work out how they behave under changes of coordinates. By definition, two $1$-forms are equal if they are equal as maps from tangent vectors to numbers. 
+where the $\xi_i$ are smooth functions of the $x_i$. Here we are thinking of the cotangent bundle as a sheaf of $1$-forms. To get the total space of the bundle, we promote the $\xi_i$ to coordinates. That is, we introduce a new space of twice the dimension, whose points are pairs $(p, \xi_p)$ of a point $p\in M$ and a form $\xi_p \in T^\bullet_p M$ and on which the $\xi_i$ are functions. That is, coordinates on $T^\bullet M$ are tuples $(x_1, \dots, x_n, \xi_1, \dots, \xi_n)$, and a section of the projection to $M$ is a $1$-form in accordance with the equation above. 
+
+It then remains to work out how they behave under changes of coordinates. By definition, two $1$-forms are equal if they are equal as maps from tangent vectors to numbers. 
 
 
 Next, we claim that there is an intrinsically defined $1$-form
@@ -98,8 +120,11 @@ $$
 \alpha = \xi_x dx + \xi_y dy
 $$
 
-
-
+Given that $\alpha$ is intrinsically defined, we obtain an equally intrinsic symplectic form $\omega = -d\alpha$, given in coordinates by
+$$
+\omega = \sum_i dx_i \wedge d\xi_i.
+$$
+That $\omega$ is closed is immediate, since it is exact by definition. It is also non-degenerate (this can by checked in any chart).
 \section*{Lecture 10: Vector fields and flows}
 
 \section*{Lecture 11: Properties of the Lie derivative}
