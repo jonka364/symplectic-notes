@@ -102,34 +102,113 @@ Finally, we may ask whether the standard vector space basis exhibited initially 
 
 
 \section*{Lecture 9: Cotangent bundles are symplectic}
-Let $M$ be a smooth manifold. Then its cotangent bundle $T^\bullet M$ is again a smooth manifold. If the functions $x_i$ are coordinates on (some subset of) $M$, then a section of $T^\bullet M$ can be written uniquely as
+The cotangent bundle if a smooth manifold is a symplectic manifold in a canonical way. To explain this we recall some standard material on contangent bundles. Let $M$ be a smooth $n$-dimensional manifold, not assumed to be symplectic or even even-dimensional. Then its cotangent bundle is a bundle $\pi:T^\bullet M \rightarrow M$ of relative dimension $n$ whose sheaf of sections is $\Omega^1(M)$, the sheaf of differential $1$-forms. First recall that picking coordinates on (some subset of) $M$ automatically gives bases for the modules of vector fields and $1$-forms. Namely, if $\{x^i\}$ are coordinates on the base, then the coordinate derivations
 $$
-\xi = \sum_i \xi_i(x_1, \dots, x_n) dx_i,
+\partial_i = \frac{\partial}{\partial x^i}
 $$
-where the $\xi_i$ are smooth functions of the $x_i$. Here we are thinking of the cotangent bundle as a sheaf of $1$-forms. To get the total space of the bundle, we promote the $\xi_i$ to coordinates. That is, we introduce a new space of twice the dimension, whose points are pairs $(p, \xi_p)$ of a point $p\in M$ and a form $\xi_p \in T^\bullet_p M$ and on which the $\xi_i$ are functions. That is, coordinates on $T^\bullet M$ are tuples $(x_1, \dots, x_n, \xi_1, \dots, \xi_n)$, and a section of the projection to $M$ is a $1$-form in accordance with the equation above. 
-
-It then remains to work out how they behave under changes of coordinates. By definition, two $1$-forms are equal if they are equal as maps from tangent vectors to numbers. 
-
-
-Next, we claim that there is an intrinsically defined $1$-form
+are a basis for the space of vector fields (over the set where the coordinates are valid), and hence the dual basis $\{dx^i\}$ defined by
 $$
-\alpha = \sum_i \xi_i dx_i,
+dx^i(\partial_j) = \delta^i_j
 $$
-called the tautological $1$-form. As an example, let's take $M=\mathbb{R}^2$ away from the origin and let's work out $\alpha$ in both Cartesian and polar coordinates. In Cartesian coordinates we have
+is a basis for the space of $1$-forms (again, above the relevant subset of $M$). Thus, a $1$-form $\xi$ can be written as 
 $$
-\alpha = \xi_x dx + \xi_y dy
+\xi = \xi_i dx^i,
 $$
-
-Given that $\alpha$ is intrinsically defined, we obtain an equally intrinsic symplectic form $\omega = -d\alpha$, given in coordinates by
+using the summation convention. Here the $\xi_i$ are not themselves $1$-forms but merely real-valued functions on the base. We might indicate the dependence by writing $\xi_P$ for the restriction of $\xi$ to the tangent space over $P\in M$, and write
 $$
-\omega = \sum_i dx_i \wedge d\xi_i.
+\xi_P = \xi_i(P) dx^i.
 $$
-That $\omega$ is closed is immediate, since it is exact by definition. It is also non-degenerate (this can by checked in any chart).
+Thus, on this account each $\xi_i$ is a smooth function $M \rightarrow \mathbb{R}$ sending $P \mapsto \xi_i (P)$. To give a $1$-form, then, is to give an $n$-tuple of such functions. We might call this the \emph{sheaf description} of $1$-forms. This is contrasted with the \emph{bundle description}, to which we now turn. To give a bundle over $M$ is to give a total space together with a projection to $M$, the base manifold. As a set, the total space $T^\bullet M$ of the cotangent bundle consists of all pairs $(P, \xi_P)$ of a point in $M$ and a linear map $\xi_P: T_PM \rightarrow \mathbb{R}$, that is, a $1$-form restricted to that tangent space. The projection $\pi: T^\bullet M \rightarrow M$ simply discards the form: $(P, \xi_P)\mapsto P$. Next, we introduce a collection of functions of the total space to serve as coordinates. To this end, pick coordinates on the base as described above. Then just as before, there are unique numbers $\xi_i$ such that
+$$
+\xi_P = \xi_i dx^i.
+$$
+Now, however, we take this equation to define functions $\xi_i = \xi_i(P, \xi_P)$ on the total space. Thus each fiber $\pi^{-1}(P)$ is coordinatized by the $\{\xi_i\}$. To make contact with the sheaf description, note that a $1$-form is precisely a section of $\pi$. It is conventional to bridge the two descriptions by using the same letter to denote the component of the section and the coordinate on $T^\bullet M$ which it picks out, thus writing
+$$
+\xi_i = \xi_i(P).
+$$
+This is a resonable convention but is strictly speaking abuse of notation, since the $\xi_i$ in the left hand side is a function on $T^\bullet M$ (which is ``independent of the functions $x^i$ (which are also functions on $T^\bullet M$ after pulling back along $\pi$)''), while the $\xi_i$ in the right hand side is a function on $M$, hence a function of the $x^i$.\\
+All of this was done relative to a coordinate patch in the base. The next step will be to study changes of coordinates. To warm up we will take $M = \mathbb{R}^2$ and compare Cartesian and polar coordinates (hence this will work only away from the origin). Let $\xi$ be a $1$-form on $\mathbb{R}^2$. Then there are functions $\xi_x$ and $\xi_y$ on $\mathbb{R}^2$ such that
+$$
+\xi = \xi_x dx + \xi_y dy.
+$$
+We can pick out those functions/components by using the fact that coordinate derivatives are dual to the basis $\{dx, dy\}$:
+$$
+\xi_x = \xi(\partial_x),\quad \xi_y = \xi(\partial_y).
+$$
+Now, we know already how coordinate vector fields chage between coordinate patches; that's just the chain rule:
+$$
+\partial_x = \frac{\partial r}{\partial x}\partial_r + \frac{\partial \theta}{\partial x} \partial_\theta = \cos\theta \partial_r - \frac{\sin\theta}{r} \partial_\theta,
+$$
+and
+$$
+\partial_y = \frac{\partial r}{\partial y}\partial_r + \frac{\partial \theta}{\partial y} \partial_\theta =\sin\theta \partial_r + \frac{\cos\theta}{r} \partial_\theta.
+$$
+Applying $\xi$ to these equations we see that its components transform in the same way:
+$$
+\xi_x = \cos\theta \xi_r - \frac{\sin\theta}{r} \xi_\theta,
+$$
+and
+$$
+\xi_y = \sin\theta \xi_r + \frac{\cos\theta}{r} \xi_\theta.
+$$
+These equations are valid both as claims about sections of the bundle and as claims about the fiber coordinates on $T^\bullet M$. By contrast, the dual bases transform by the inverse map:
+$$
+dx = d(r \cos\theta) = \cos\theta dr  - r \sin\theta d\theta
+$$
+and
+$$
+dy = d(r \sin\theta) = \sin\theta dr + r \cos\theta d\theta.
+$$
+The general story is as follows: it is conventional to write $\{q^i\}$ for coordinates on the base $M$ and $\{p_i\}$ for the corresponding fiber coordinates. If  $\{\tilde{q}^i\}$ is another coordinate system we translate tangent vectors as 
+$$
+\frac{\partial }{\partial q^i} = \frac{\partial \tilde{q}^j}{\partial q^i}\frac{\partial }{\partial \tilde{q}^j},
+$$
+hence
+$$
+p_i = \frac{\partial \tilde{q}^j}{\partial q^i} \tilde{p}_j
+$$
+and
+$$
+dq^i = \frac{\partial q^i}{\partial \tilde{q}^j} d\tilde{q}^j.
+$$
+Now fix a coordinate system as above. We claim that the $1$-form 
+$$
+\alpha = p_i dq^i
+$$
+does not depend on the coordinates used. Thus, for example, we claim that
+$$
+p_x dx + p_ydy = p_r dr + p_\theta d\theta,
+$$
+which can be verified directly using the expressions above (making the appropriate changes in notation). In fact the general case is no more difficult to establish:
+$$
+p_i dq^i = \left(\frac{\partial \tilde{q}^j}{\partial q^i} \tilde{p}_j \right) \left( \frac{\partial q^i}{\partial \tilde{q}^k} d\tilde{q}^k\right) = \frac{\partial \tilde{q}^j}{\partial q^i} \frac{\partial q^i}{\partial \tilde{q}^k} \tilde{p}_j  d\tilde{q}^k = \delta ^j_k \tilde{p}_j  d\tilde{q}^k = \tilde{p}_j  d\tilde{q}^j.
+$$
+Thus $\alpha$ is intrinsic; it is called the \emph{tautological $1$-form}. Now we may define an equally intrinsic $2$-form,
+$$
+\omega = -d\alpha = dq^i \wedge dp_i,
+$$
+which also ``looks the same in every coordinate system''. It is closed (being exact), and non-degeneracy can be checked in any coordinate system. Upshot: the total space of any cotangent bundle is canonically a symplectic manifold. 
 \section*{Lecture 10: Vector fields and flows}
 
+
+Given a flow $\sigma_t: M\rightarrow M$, we get isomorphisms between tensor spaces at different points along the trajectories of the flow. It is then possible to 
 \section*{Lecture 11: Properties of the Lie derivative}
 
 \section*{Lecture 12: The interior product}
+Given a vector (field) $X$ and a (differential) $k$-form $\omega$, we can get a $k-1$-form by inserting $X$ into the first slot of $\omega$. This map is denoted $i_X$ and is called the interior product:
+$$
+i_X: \Omega^k \rightarrow \Omega^{k-1}
+$$
+defined by 
+$$
+(i_X\omega)(X_2, \dots, X_k)= \omega(X, X_2, \dots, X_k).
+$$
+If you pick coordinates so that $X$ and $\omega$ are expressed by their components $X^\mu$ and $\omega_{\nu_1, \dots, \nu_k}$, then the interior product is ``contraction on the first index'':
+$$
+X^\mu \omega_{\mu, \nu_2, \dots, \nu_k}.
+$$
+Actually you need not commit to any particular coordinate system to have indices; there is ``abstract index notation''. This makes no difference here. \\
+The interior product goes from $\Omega^k$ to $\Omega^{k-1}$ while the exterior derivative goes the other way. It is reasonable to ask how they interact. 
 
 
 \section*{Lecture 13: Symplectic fields and flows}
