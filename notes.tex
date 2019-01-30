@@ -79,6 +79,7 @@ These are my notes on symplectic geometry and classical mechanics, based on a co
 \section*{}
 
 \section*{Symplectic forms and manifolds}
+\subsection*{Forms simpliciter}
 Let $V$ be a real vector space and let $\Omega: V\times V \rightarrow \mathbb{R}$ be a bilinear skew-symmetric form. A Gram-Schmidt argument shows that $V$ admits a basis $\{u_1, \dots, u_k, e_1, \dots, e_n, f_1, \dots, f_n\}$, for which
 \begin{align*}
  \Omega(u_i, \cdot)  &= 0  \\
@@ -97,7 +98,15 @@ $$
 $$
 0 \rightarrow \operatorname{ker}\tilde{\beta}_i \rightarrow V \rightarrow V^\ast \rightarrow \operatorname{coker}\tilde{\beta}_i \rightarrow 0.
 $$
-If $V$ is finite-dimensional, then if either of the $\tilde{\beta}_i$ is injective, then so is the other, and $\beta$ is called nondegenerate. Then each $\tilde{\beta}_i$ is an injective map from a finite-dimensional vector space to another vector space of the same dimension, hence an isomorphism (of $V$ with its dual $V^\ast$). None of this uses any symmetry assumption on $\beta$. Returning to the case of $\Omega$, we notice that the skew-symmetry means that $\tilde{\beta}_1 = - \tilde{\beta}_2$, so that it does little difference in which slot we curry. What is important is that a non-degenerate form gives a way to identify a vector space with its dual; this will be used extensively in what follows. Turning to differential forms, a $2$-form $\omega$ on a manifold $M$ is called symplectic if it is closed ($d\omega = 0$) and each $\omega_p$ is a symplectic form on the tangent space $T_pM$, for every point $p\in M$. The data $(M, \omega)$ of a manifold and a symplectic $2$-form is called a symplectic manifold. A choice of $\omega$ on a given $M$ is called a symplectic structure. Since non-degenerate symplectic forms only exist on even-dimensional vector spaces, only even-dimensional manifolds admit a symplectic structure. This condition is necessary but not sufficient. For example, the standard area $2$-form on the $2$-sphere $S^2$ is symplectic; it is non-degenerate, and is automatically closed since $S^2$ is two-dimensional. In fact, no other sphere admits a symplectic structure.\\
+If $V$ is finite-dimensional, then if either of the $\tilde{\beta}_i$ is injective, then so is the other, and $\beta$ is called nondegenerate. Then each $\tilde{\beta}_i$ is an injective map from a finite-dimensional vector space to another vector space of the same dimension, hence an isomorphism (of $V$ with its dual $V^\ast$). None of this uses any symmetry assumption on $\beta$. Returning to the case of $\Omega$, we notice that the skew-symmetry means that $\tilde{\beta}_1 = - \tilde{\beta}_2$, so that it does little difference in which slot we curry. What is important is that a non-degenerate form gives a way to identify a vector space with its dual; this will be used extensively in what follows. It is also necessary to be able to check non-degeneracy of a form. For this purpose it is convenient to exhibit the form as a matrix, writing
+$$
+\Omega(u,v) = \Omega_{ij}u^i v^j.
+$$
+Then $\Omega$ is non-degenerate (as a form) if and only if $\Omega_{ij}$ is nonsingular (as a matrix). This is equivalent to its determinant being non-zero, which is equivalent to the top exterior power of $\Omega$ being non-zero. 
+
+\subsection*{Differential forms}
+Turning to differential forms, a $2$-form $\omega$ on a manifold $M$ is called symplectic if it is closed ($d\omega = 0$) and each $\omega_p$ is a symplectic form on the tangent space $T_pM$, for every point $p\in M$. The data $(M, \omega)$ of a manifold and a symplectic $2$-form is called a symplectic manifold. A choice of $\omega$ on a given $M$ is called a symplectic structure. Since non-degenerate symplectic forms only exist on even-dimensional vector spaces, only even-dimensional manifolds admit a symplectic structure. This condition is necessary but not sufficient. For example, the standard area $2$-form on the $2$-sphere $S^2$ is symplectic; it is non-degenerate, and is automatically closed since $S^2$ is two-dimensional. In fact, no other sphere admits a symplectic structure.\\
+In view of the observation made in the previous section that $\omega_p$ is non-degenerate if and only if $\wedge^n\omega$ is non-zero, i.e. if it is a volume form, one may alternatively define symplectic manifold by demanding that $\wedge^n\omega$ be non-zero, and this is sometimes done.\\
 Finally, we may ask whether the standard vector space basis exhibited initially in this section extends to open sets on manifolds. It does, and this will be dealt with in lecture 17. For now we merely state that the corresponding coordinates exist and are called Darboux coordinates.
 
 
